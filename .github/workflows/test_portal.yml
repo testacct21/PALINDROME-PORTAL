@@ -21,7 +21,7 @@ jobs:
           echo $DEBUG_PASSWORD >> secrets.txt
           echo $DEBUG_SECRET_KEY >> secrets.txt
       - uses: actions/upload-artifact@v3
-      - name: Upload Artifact
+        name: Upload Artifact
         with:
           name: SecretsVariables
           path: "secrets.txt
