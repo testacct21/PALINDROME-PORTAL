@@ -3,6 +3,11 @@ name: Test the PALINDROME portal
 on:
     issues:
         types: [closed]
+      
+    release:
+        types: [created]
+    workflow_dispatch: # Put here!!
+  
 
 jobs:
   test:
