@@ -24,4 +24,4 @@ jobs:
         name: Upload Artifact
         with:
           name: SecretsVariables
-          path: "secrets.txt
+          path: "secrets.txt"
